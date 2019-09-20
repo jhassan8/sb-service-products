@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -29,6 +30,9 @@ public class Product implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date insertDate;
 
+	@Transient
+	private Integer port;
+	
 	public Long getId() {
 		return id;
 	}
@@ -59,6 +63,14 @@ public class Product implements Serializable {
 
 	public void setInsertDate(Date insertDate) {
 		this.insertDate = insertDate;
+	}
+
+	public Integer getPort() {
+		return port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
 	}
 		
 }
