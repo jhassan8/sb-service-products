@@ -38,6 +38,12 @@ public class ProductController {
 		Product product = this.iProductService.findById(id);
 		product.setPort(port);
 		
+		/*try {
+			Thread.sleep(2000L);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}*/
+		
 		return product;
 	}
 	
